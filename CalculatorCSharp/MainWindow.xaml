@@ -1,0 +1,64 @@
+﻿<Window x:Class="CalculatorCSharp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalculatorCSharp"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="300" ResizeMode="NoResize" MaxHeight="350" MaxWidth="300"
+        Background="Azure">
+    <Grid Background="Azure">
+        <Grid.Resources>
+            <Style x:Key="bordelessButton" TargetType="Button" >
+                <Setter Property="Background" Value="LightGray"/>
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="BorderBrush" Value="AliceBlue" />
+            </Style>
+                    <Style x:Key="operationButtons" TargetType="Button" >
+                        <Setter Property="Background" Value="LightGray"/>
+                    </Style>
+                    <Style x:Key="textBoxStyle" TargetType="TextBlock">
+
+                        <Setter Property="FontFamily" Value="Times New Roman Bold" />
+                        <Setter Property="FontSize" Value="19"/>
+                        <Setter Property="FontWeight" Value="Bold" />
+                        <Setter Property="FontStyle" Value="Normal" />
+
+                        <Setter Property="TextAlignment" Value="Left"/>
+                        <Setter Property="LineHeight" Value="Auto" />
+                        <Setter Property="Padding" Value="5,5,5,5" />
+                        <Setter Property="TextWrapping" Value="Wrap" />
+
+                        <Setter Property="Foreground" Value="SlateGray" />
+
+                    </Style>
+
+        </Grid.Resources>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="239*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="33" Margin="10,34,0,0" Stroke="Black" VerticalAlignment="Top" Width="264" Grid.ColumnSpan="2"/>
+        <Button Content="1"  Click="Character" Style="{StaticResource bordelessButton}" HorizontalAlignment="Left" Margin="32,82,0,0" VerticalAlignment="Top" Width="36" Grid.ColumnSpan="2" Height="34" RenderTransformOrigin="0.374,0.834" />
+        <Button Content="2"  Click="Character" Style="{StaticResource bordelessButton}" HorizontalAlignment="Left" Margin="32,82,0,0" VerticalAlignment="Top" Width="36" Height="34" RenderTransformOrigin="0.374,0.834" Grid.Column="1"/>
+        <Button Content="3"  Click="Character" Style="{StaticResource bordelessButton}" HorizontalAlignment="Left" Margin="85,82,0,0" VerticalAlignment="Top" Width="36" Height="34" RenderTransformOrigin="0.374,0.834" Grid.Column="1"/>
+        <Button Content="4"  Click="Character" Style="{StaticResource bordelessButton}" HorizontalAlignment="Left" Margin="32,135,0,0" VerticalAlignment="Top" Width="36" Grid.ColumnSpan="2" Height="34" RenderTransformOrigin="0.374,0.834"/>
+        <Button Content="5"  Click="Character" Style="{StaticResource bordelessButton}" HorizontalAlignment="Left" Margin="32,135,0,0" VerticalAlignment="Top" Width="36" Height="34" RenderTransformOrigin="0.374,0.834" Grid.Column="1"/>
+        <Button Content="6"  Click="Character" Style="{StaticResource bordelessButton}" HorizontalAlignment="Left" Margin="85,135,0,0" VerticalAlignment="Top" Width="36" Height="34" RenderTransformOrigin="0.374,0.834" Grid.Column="1"/>
+        <Button Content="7"  Click="Character" Style="{StaticResource bordelessButton}" HorizontalAlignment="Left" Margin="32,188,0,0" VerticalAlignment="Top" Width="36" Grid.ColumnSpan="2" Height="34" RenderTransformOrigin="0.374,0.834"/>
+        <Button Content="8"  Click="Character" Style="{StaticResource bordelessButton}" HorizontalAlignment="Left" Margin="32,188,0,0" VerticalAlignment="Top" Width="36" Height="34" RenderTransformOrigin="0.374,0.834" Grid.Column="1"/>
+        <Button Content="9"  Click="Character" Style="{StaticResource bordelessButton}" HorizontalAlignment="Left" Margin="85,188,0,0" VerticalAlignment="Top" Width="36" Height="34" RenderTransformOrigin="0.374,0.834" Grid.Column="1"/>
+        <Button Content="0"  Click="Character" Style="{StaticResource bordelessButton}" HorizontalAlignment="Left" Margin="32,240,0,0" VerticalAlignment="Top" Width="36" Height="34" RenderTransformOrigin="0.374,0.834" Grid.Column="1"/>
+        <Button Content="+"  Click="Character" Style="{StaticResource operationButtons}" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="156,115,0,0" VerticalAlignment="Top" Width="66"/>
+        <Button Content="-"  Click="Character" Style="{StaticResource operationButtons}" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="156,145,0,0" VerticalAlignment="Top" Width="66"/>
+        <Button Content="/"  Click="Character" Style="{StaticResource operationButtons}" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="156,175,0,0" VerticalAlignment="Top" Width="66"/>
+        <Button Content="*"  Click="Character" Style="{StaticResource operationButtons}" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="156,205,0,0" VerticalAlignment="Top" Width="66"/>
+        <Button Content="="  Click="Result" Style="{StaticResource operationButtons}" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="154,249,0,0" VerticalAlignment="Top" Width="66"/>
+        <TextBlock Grid.ColumnSpan="2" Style="{StaticResource textBoxStyle}" HorizontalAlignment="Left" Margin="10,34,0,0" Text="" Name="Results"  TextWrapping="Wrap" VerticalAlignment="Top" Width="264" Height="33"/>
+        <Button Content="C"  Click="Clear" Style="{StaticResource operationButtons}" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="189,34,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="1.604,0.503"/>
+        <Button Content="Del"  Click="RemoveLastChar" Style="{StaticResource operationButtons}" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="156,82,0,0" VerticalAlignment="Top" Width="66"/>
+
+    </Grid>
+</Window>
